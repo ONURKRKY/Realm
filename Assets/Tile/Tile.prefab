@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1060805346683394382}
   - component: {fileID: 717428987904646459}
+  - component: {fileID: 1595736502678746838}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -45,6 +46,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77eb0ae53b32c7340a6ddcdabaaf02ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TowerPrefab: {fileID: 3219458064393657486, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+  isplaceable: 1
+--- !u!65 &1595736502678746838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060805346683394383}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 1, z: 10}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1060805346910518114
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +269,7 @@ GameObject:
   - component: {fileID: 262234982976967333}
   - component: {fileID: 3640631927400494641}
   m_Layer: 0
-  m_Name: GrassMesh
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
