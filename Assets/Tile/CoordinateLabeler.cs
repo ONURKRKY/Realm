@@ -7,15 +7,19 @@ using System;
 [ExecuteAlways]
 public class CoordinateLabeler : MonoBehaviour
 {
+ 
 
  TextMeshPro Label;
  Vector2Int coordinates= new Vector2Int();
+ Waypoint waypoint;
 
 
     void Awake() 
     {
     Label=GetComponent<TextMeshPro>();
-        DisplayCoordinates();
+    Label.enabled=false;
+    waypoint=GetComponentInParent<Waypoint>();
+    DisplayCoordinates();
 
     }
     void Update()
@@ -25,8 +29,29 @@ public class CoordinateLabeler : MonoBehaviour
             DisplayCoordinates();
             UpdateObjectName();
         }
+        ColorCoordinates();
+        ToogleLabels();
+        
     }
-
+        void ToogleLabels()
+        {
+            if(Input.GetKeyDown(KeyCode.C))
+            {
+                Label.enabled=!Label.IsActive();
+                
+            }
+        }
+    void ColorCoordinates()
+    {
+        if(waypoint.Isplaceable)
+        {
+            Label.color=Color.blue;
+        }
+        else
+        {
+            Label.color=Color.red;
+        }
+    }
      void DisplayCoordinates()
     {
         coordinates.x=Mathf.RoundToInt(transform.parent.position.x/UnityEditor.EditorSnapSettings.move.x);
