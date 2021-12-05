@@ -37,13 +37,17 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Enemy\ObjectPool.cs" />
+     <Compile Include="Assets\Pathfinding\Gridmanager.cs" />
      <Compile Include="Assets\Enemy\Enemy.cs" />
      <Compile Include="Assets\Tile\Waypoint.cs" />
+     <Compile Include="Assets\Tower\Tower.cs" />
      <Compile Include="Assets\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Tower\TargetLocater.cs" />
+     <Compile Include="Assets\Pathfinding\Node.cs" />
      <Compile Include="Assets\Enemy\EnemyMover.cs" />
-     <Compile Include="Assets\Tile\CoordinateLabeler.cs" />
      <Compile Include="Assets\Bank\Bank.cs" />
+     <Compile Include="Assets\Tile\CoordinateLabeler.cs" />
+     <Compile Include="Assets\Pathfinding\Pathfinder.cs" />
      <None Include="Assets\AssetsPack\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\AssetsPack\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\AssetsPack\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

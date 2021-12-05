@@ -11,14 +11,16 @@ public class CoordinateLabeler : MonoBehaviour
 
  TextMeshPro Label;
  Vector2Int coordinates= new Vector2Int();
- Waypoint waypoint;
+ Gridmanager gridmanager;
+
 
 
     void Awake() 
     {
+    gridmanager=FindObjectOfType<Gridmanager>();
     Label=GetComponent<TextMeshPro>();
     Label.enabled=false;
-    waypoint=GetComponentInParent<Waypoint>();
+  
     DisplayCoordinates();
 
     }
@@ -43,13 +45,26 @@ public class CoordinateLabeler : MonoBehaviour
         }
     void ColorCoordinates()
     {
-        if(waypoint.Isplaceable)
+        if(gridmanager== null){return;}
+
+        Node node=gridmanager.GetNode(coordinates);
+
+        if(node==null) return;
+        if(!node.isWalkable)
+        {
+            Label.color=Color.red;
+        }
+        else if(node.isPath)
+        {
+            Label.color=Color.white;
+        }
+          else if(node.isExplored)
         {
             Label.color=Color.blue;
         }
         else
         {
-            Label.color=Color.red;
+            Label.color=Color.green;
         }
     }
      void DisplayCoordinates()
